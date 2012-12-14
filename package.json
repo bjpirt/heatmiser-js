@@ -21,5 +21,8 @@
     "request": "*",
     "express": "*",
     "redis-url": "*"
+  },
+  "engines": {
+    "node": "0.8.x"
   }
 }
