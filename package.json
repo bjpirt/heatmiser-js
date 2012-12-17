@@ -20,7 +20,9 @@
     "optimist": "*",
     "request": "*",
     "express": "*",
-    "redis-url": "*"
+    "redis-url": "*",
+    "bcrypt": "*",
+    "ejs":"*"
   },
   "engines": {
     "node": "0.8.x",
