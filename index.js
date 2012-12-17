@@ -9,6 +9,7 @@ var app = express(express.logger());
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.cookieSession({secret: 'tobereplaced'}));
+app.use(express.methodOverride());
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
@@ -40,6 +41,17 @@ app.post('/devices', function(req, res){
         res.redirect('/');
       });
     }
+  }else{
+    res.redirect('/login');
+  }
+});
+
+app.delete('/devices/:device_id', function(req, res){
+  if(req.session.userid){
+    User.find(req.session.userid, function(user){
+      user.delete_device(req.params.device_id);
+      res.redirect('/');
+    });
   }else{
     res.redirect('/login');
   }

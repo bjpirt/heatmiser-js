@@ -5,9 +5,9 @@
   <body>
     <h1>Heatmiser WiFi</h1>
     <table>
-      <tr><td>Host</td><td>PIN</td><td>Feed</td><td>API Key</td></tr>
+      <tr><td>Host</td><td>PIN</td><td>Feed</td><td>API Key</td><td></td></tr>
       <% for(var key in user.devices){ %>
-        <tr><td><%= user.devices[key].host %></td><td><%= user.devices[key].pin %></td><td><%= user.devices[key].feed %></td><td><%= user.devices[key].api_key %></td></tr>
+        <tr><td><%= user.devices[key].host %></td><td><%= user.devices[key].pin %></td><td><%= user.devices[key].feed %></td><td><%= user.devices[key].api_key %></td><td><form action="/devices/<%= key %>" method="post"><input type="hidden" value="delete" name="_method" /><input type="submit" value="delete" /></form></td></tr>
       <% } %>
     </table>
     <form action="/devices" method="POST">
