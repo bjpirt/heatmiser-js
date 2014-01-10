@@ -14,7 +14,7 @@
     "heatmiser"
   ],
   "author": "Ben Pirt",
-  "license": "GPL",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies" : {
     "optimist": "*",
